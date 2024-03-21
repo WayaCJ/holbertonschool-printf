@@ -1,6 +1,5 @@
-#include <stdarg.h>
-#include <stdio.h>
 #include "main.h"
+#include <unistd.h>
 /**
  *_printf- output
  *@format: directives
@@ -21,26 +20,26 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					putchar(va_arg(args, int));
-					c++;
+					c += i_char(args);
 					break;
 				case 's':
-					{
-						c += _print_s(va_arg(args, const char *));
-						break;
-					}
+					c += i_string(args);
+					break;
+				case 'd':
+				case 'i':
+					c += i_int(args);
 					break;
 				case '%':
-					putchar('%');
-					c++;
+					c += i_percent();
 					break;
 				default:
+					c += i_direct(*format);
 					break;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			write(1, format, 1);
 			c++;
 		}
 		format++;

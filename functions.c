@@ -1,18 +1,62 @@
-#include <stdio.h>
 #include "main.h"
-/**
- *_print_s- prints string
- *@str: string
- *Return: result
- */
-int _print_s(const char *str)
+#include <unistd.h>
+int i_char(va_list args)
 {
-	int c = 0;
+	char c = (char)va_arg(args, int);
+	
+	write(1, &c, 1);
+	return (1);
+}
+
+int i_string(va_list args)
+{
+	const char *str = va_arg(args, const char*);
+	int count = 0;
 
 	while (*str)
 	{
-		putchar(*str++);
-		c++;
+		write(1, str++, 1);
+		count++;
 	}
-	return (c);
+	return (count);
+}
+
+int i_int(va_list args)
+{
+	int num = va_arg(args, int);
+	int count = 0;
+
+	if (num < 0)
+	{
+		num = -num;
+		write(1, "-", 1);
+		count++;
+	}
+	count += i_unint((unsigned int)num);
+	return count;
+}
+
+int i_unint(unsigned int num)
+{
+	int count = 0;
+	char d;
+
+	if (num / 10)
+		count += i_unint(num / 10);
+	d = '0' + (char)(num % 10);
+	write(1, &d, 1);
+	return (count + 1);
+}
+
+int i_percent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}
+
+int i_direct(char c)
+{
+	write(1, "%", 1);
+	write(1, &c, 1);
+	return (2);
 }
