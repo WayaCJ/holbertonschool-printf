@@ -1,4 +1,4 @@
-.TH _printf 3 12/11/2021 GNU 
+.TH _printf 3 03/21/2024 GNU 
 .SH NAME
 _printf : rewrite the printf function, this function works exactly like Printf.
 .SH SYNOPSIS
