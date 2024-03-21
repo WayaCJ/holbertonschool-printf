@@ -1,0 +1,53 @@
+.TH _printf 3 12/11/2021 GNU 
+.SH NAME
+_printf : rewrite the printf function, this function works exactly like Printf.
+.SH SYNOPSIS
+In the case of a command, you get a formal description of how to run it and what command line options it takes.
+work like printf function
+#include "main.h"
+
+_printf(a + b);
+
+.SH DESCRIPTION
+The function _printf() is used to have a output of a format to stdout.
+
+Conversion specifiers
+
+c  - Convert a int argument into an unsigned char, and the resulting character is written.
+
+s  - The pointer char * is browse in a loop into the end '\0' and it's print with the putchar function.
+
+%  - Print the special character "%"
+
+d  - Print deximal numbers 
+
+i  - Print integer 
+
+b  - Convert and print numbers in Base 2
+
+u  - Print unsigned int 
+
+o  - Convert and print numbers in Base 8 
+
+x  - Convert and print numbers in Base 16 in Lowercase
+
+X  - Convert and print numbers in Base 16 in Uppercase
+
+S  - Print ASCII string
+
+p  - Print pointers 
+
+l  - Print long int 
+
+r  - Prints the reverse string
+
+R  - Prints the rot13'ed string
+.SH EXAMPLES
+_printf("we love Holberton\n");
+
+_printf("The Bermuda Triangle < void %c", c_var);
+
+_printf("%s", str);
+
+.SH AUTHOR
+Joshua Maldonado && Carlos Soto
