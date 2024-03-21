@@ -29,15 +29,6 @@ int _printf(const char *format, ...)
 				case 'i':
 					c += i_int(args);
 					break;
-				case 'o':
-					c += write_unsigned_octal(args);
-					break;
-				case 'x':
-					c += write_unsigned_hex(args);
-					break;
-				case 'p':
-					c += write_pointer(args);
-					break;
 				case '%':
 					c += i_percent();
 					break;
