@@ -1,7 +1,11 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "main.h"
-
+/**
+ *_printf- output
+ *@format: directives
+ *Return: printed (excluding null byte)
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -22,13 +26,8 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					{
-						const char *str = va_arg(args, const char*);
-
-						while (*str)
-						{
-							putchar(*str++);
-							c++;
-						}
+						c += _print_s(va_arg(args, const char *));
+						break;
 					}
 					break;
 				case '%':
