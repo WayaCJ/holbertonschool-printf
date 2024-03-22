@@ -24,8 +24,12 @@ int i_string(va_list args)
 	const char *str = va_arg(args, const char *);
 	int count = 0;
 
-	while (*str != NULL)
+	while (*str != '\0')
 	{
+		if (str == '\0')
+		{
+			str = "(null)";
+		}
 		write(1, str++, 1);
 		count++;
 	}
