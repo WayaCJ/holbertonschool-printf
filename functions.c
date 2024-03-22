@@ -1,12 +1,11 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+
 /**
- *i_char: character
- *i_string: string
- *i_int: integer
- *i_unint: unsigned int
- *i_percent: prints %
+ *i_char- character
+ *@args: arguments
+ *Return: characters
  */
 int i_char(va_list args)
 {
@@ -15,7 +14,11 @@ int i_char(va_list args)
 	write(1, &c, 1);
 	return (1);
 }
-
+/**
+ *i_string- print string
+ *@args: argu
+ *Return: characters
+ */
 int i_string(va_list args)
 {
 	const char *str = va_arg(args, const char*);
@@ -28,7 +31,11 @@ int i_string(va_list args)
 	}
 	return (count);
 }
-
+/**
+ *i_int- prit int
+ *@args: arguments
+ *Return: characters
+ */
 int i_int(va_list args)
 {
 	int num = va_arg(args, int);
@@ -43,7 +50,11 @@ int i_int(va_list args)
 	count += i_unint((unsigned int)num);
 	return (count);
 }
-
+/**
+ *i_unint- unsigned
+ *@num: number
+ *Return: 1
+ */
 int i_unint(unsigned int num)
 {
 	int count = 0;
@@ -55,7 +66,10 @@ int i_unint(unsigned int num)
 	write(1, &d, 1);
 	return (count + 1);
 }
-
+/**
+ * i_percent- %
+ *Return: void
+ */
 int i_percent(void)
 {
 	char percent = '%';
