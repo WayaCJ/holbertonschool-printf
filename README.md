@@ -17,7 +17,7 @@ The project consists of the following files:
 - `main.h`: Header file containing function prototypes.
 - `man_3_printf`: Manual page for the custom _printf function.
 
-## File Descriptions <a name="file-descriptions"></a>
+## File Descriptions <a name="file-description"></a>
 
 - `_printf.c`: This file contains the creation of the `_printf` function, which mimics the behavior of the standard `printf` function in C. It includes support for various format specifiers such as `%c`, `%s`, `%d`, `%i`, and `%`.
 
