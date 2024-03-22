@@ -24,9 +24,9 @@ int i_string(va_list args)
 	const char *str = va_arg(args, const char *);
 	int count = 0;
 
-	while (*str != '\0')
+	while (*str != NULL)
 	{
-		write(1, *str++, 1);
+		write(1, str++, 1);
 		count++;
 	}
 	return (count);
