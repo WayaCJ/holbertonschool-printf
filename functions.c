@@ -26,10 +26,6 @@ int i_string(va_list args)
 
 	while (*str != '\0')
 	{
-		if (str == '\0')
-		{
-			str = "(null)";
-		}
 		write(1, str++, 1);
 		count++;
 	}
