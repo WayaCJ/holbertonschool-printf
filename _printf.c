@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 					c += i_int(args);
 					break;
 				case '%':
-					c += i_percent();
+					c += i_percent(args);
 					break;
 				default:
 					c += i_direct(*format);
