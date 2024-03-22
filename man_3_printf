@@ -42,7 +42,7 @@ NOTES The _printf function does not handle the flag characters, field width, pre
 
 BUGS There are no known bugs in the _printf function.
 
-AUTHOR Joshua Maldonado
+AUTHOR Joshua Maldonado && Carlos Soto
 
 COPYRIGHT Copyright (C) 2023 Your Name. All rights reserved.
 
