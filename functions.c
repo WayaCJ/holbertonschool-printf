@@ -45,7 +45,7 @@ int i_int(va_list args)
 	int num = va_arg(args, int);
 	int count = 0;
 
-	if (num <= 0)
+	if (num < 0)
 	{
 		num = -num;
 		write(1, "-", 1);
