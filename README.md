@@ -27,6 +27,6 @@ The project consists of the following files:
 
 - `man_3_printf`: This file provides documentation for 'printf' function in the style of a Unix manual page. It includes usage instructions and description.
 
-## How to use <a name="how-to-use"><\a>
+## How to use <a name="how-to-use"></a>
 
 To use the custom "printf" function in your C program, include the "main.h" header file in your source file and call "_printf" with the desired format string and arguments.
