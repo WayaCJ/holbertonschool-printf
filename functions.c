@@ -26,7 +26,7 @@ int i_string(va_list args)
 
 	while (*str != '\0')
 	{
-		write(1, str++, 1);
+		write(1, *str++, 1);
 		count++;
 	}
 	return (count);
