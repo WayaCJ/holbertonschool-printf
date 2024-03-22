@@ -74,7 +74,7 @@ int i_unint(unsigned int num)
  * i_percent- %
  *Return: void
  */
-int i_percent(__attribute__((unused)) va list list)
+int i_percent(__attribute__((unused)) va_list args)
 {
 	char percent = '%';
 
