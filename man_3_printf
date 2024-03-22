@@ -1,53 +1,49 @@
-.TH _printf 3 03/21/2024 GNU 
-.SH NAME
-_printf : rewrite the printf function, this function works exactly like Printf.
-.SH SYNOPSIS
-In the case of a command, you get a formal description of how to run it and what command line options it takes.
-work like printf function
+NAME _printf - a custom implementation of the printf function
+
+SYNOPSIS #include <stdarg.h> int _printf(const char *format, ...);
+
+DESCRIPTION The _printf function is a custom implementation of the printf function that takes a format string and a variable number of arguments. The format string is a character string that contains zero or more directives.
+
+The _printf function handles the following conversion specifiers:
+
+    %c: prints a single character
+    %s: prints a string of characters
+    %d or %i: prints a decimal integer
+    %%: prints a percent sign
+
+For any other conversion specifier, the _printf function will print the character literally.
+
+RETURN VALUE The _printf function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+EXAMPLES Here are some examples of how to use the _printf function:
+
+c
+
+#include <stdarg.h>
+
 #include "main.h"
 
-_printf(a + b);
 
-.SH DESCRIPTION
-The function _printf() is used to have a output of a format to stdout.
+int main(void)
 
-Conversion specifiers
+{
 
-c  - Convert a int argument into an unsigned char, and the resulting character is written.
+    int n = 42;
 
-s  - The pointer char * is browse in a loop into the end '\0' and it's print with the putchar function.
+    char str[] = "hello, world";
 
-%  - Print the special character "%"
+    _printf("The value of n is: %d, and the first 7 characters of str are: %s\n", n, str);
 
-d  - Print deximal numbers 
+    return 0;
 
-i  - Print integer 
+}
 
-b  - Convert and print numbers in Base 2
+NOTES The _printf function does not handle the flag characters, field width, precision, or length modifiers.
 
-u  - Print unsigned int 
+BUGS There are no known bugs in the _printf function.
 
-o  - Convert and print numbers in Base 8 
+AUTHOR Joshua Maldonado
 
-x  - Convert and print numbers in Base 16 in Lowercase
+COPYRIGHT Copyright (C) 2023 Your Name. All rights reserved.
 
-X  - Convert and print numbers in Base 16 in Uppercase
-
-S  - Print ASCII string
-
-p  - Print pointers 
-
-l  - Print long int 
-
-r  - Prints the reverse string
-
-R  - Prints the rot13'ed string
-.SH EXAMPLES
-_printf("we love Holberton\n");
-
-_printf("The Bermuda Triangle < void %c", c_var);
-
-_printf("%s", str);
-
-.SH AUTHOR
-Joshua Maldonado && Carlos Soto
+LICENSE This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
