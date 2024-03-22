@@ -45,3 +45,14 @@ int _print_i(va_list f)
 {
 return (_print_d(f));
 }
+/**
+ *i_direct- prints % and address of c
+ *@c: character
+ *Return: 2
+ */
+int i_direct(char c)
+{
+	write(1, "%", 1);
+	write(1, &c, 1);
+	return (2);
+}
