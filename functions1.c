@@ -53,5 +53,6 @@ return (_print_d(f));
 int i_direct(char c)
 {
 	write(1, "%", 1);
+	write(1, &c, 1);
 	return (2);
 }
